@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "menu content"
+        "footer footer";
+      grid-template-columns: auto auto;
+      gap: 5px;
+      background-color: #000000;
+      padding: 5px;
+    }
+    .container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+    }
+    .container > div.header {
+      grid-area: header;
+      text-align: center;
+    }
+    .container > div.menu {
+      grid-area: menu;
+      text-align: center;
+    }
+    .container > div.content {
+      grid-area: content;
+      text-align: center;
+    }
+    .container > div.footer {
+      grid-area: footer;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header"><h2>My Header</h2></div>
+      <div class="menu">
+        <h2>Main</h2>
+      </div>
+      <div class="content">
+        <h2>Sidebar</h2>
+        <p>
+        </p>
+      </div>
+      <div class="footer"><h2>Footer</h2></div>
+    </div>
+  </body>
+</html>
