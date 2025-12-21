@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechSeek - Electronics Store</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <img
+          src="https://images.vexels.com/media/users/3/143495/isolated/preview/6b80b9965b1ec4d47c31d7eccf8ce4b0-yellow-lightning-bolt-icon.png"
+          alt="TechSeek Logo"
+        />
+        <h1>TechSeek</h1>
+      </div>
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search products..."
+          onkeydown="handleSearch(event)"
+        />
+      </div>
+      <nav>
+        <a href="signin.html">Sign Out</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img
+            src="https://cdn.tgdd.vn//News/1173869//23-730x408-1.jpg"
+            alt="Slide 1"
+          />
+          <div class="text">Welcome to TechSeek</div>
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="https://phones.mintmobile.com/wp-content/uploads/2024/09/Apple_iPhone_16_Pro_Max_black_titanium_front_back1.png"
+            alt="Slide 2"
+          />
+          <div class="text">Your Perfect shop for the latest electronics</div>
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111841_ipad-pro-4gen-mainimage.png"
+            alt="Slide 3"
+          />
+          <div class="text">Exclusive deals available now</div>
+        </div>
+      </div>
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Laptop</h2>
+      <div class="product-grid"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 TechSeek. All Rights Reserved.</p>
+    </footer>
+
+    <script src="/Spck/JS/index.js"></script>
+  </body>
+</html>

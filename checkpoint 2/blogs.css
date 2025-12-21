@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 5px
+}
+.box_item {
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid;
+}
+
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+

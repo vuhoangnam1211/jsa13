@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  font-family: Bahnschrift, sans-serif;
+  background: #f3e9dc;
+  color: #333;
+}
+
+
+header {
+  background: #1F509A;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header img {
+  height: 45px;
+}
+header h1 {
+  margin: 0;
+  color: #ECE3D2;
+  font-size: 22px;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ECE3D2;
+  font-size: 16px;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #d8c7a8;
+}
+
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  background: #000;
+}
+.mySlides {
+  display: none;
+  height: 100%;
+  position: relative;
+}
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  background: #000;
+}
+
+
+.mySlides .text {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+.dot.active,
+.dot:hover {
+  background-color: #1F509A;
+}
+
+
+.hero {
+  text-align: center;
+  padding: 40px 20px 20px;
+  color: #356A9C;
+}
+
+
+.products {
+  padding: 60px 40px;
+  text-align: center,;
+}
+.products h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #356A9C;
+  text-align:center;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 30px;
+}
+.product {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+}
+.product h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+.product p {
+  color: #666;
+  margin-bottom: 15px;
+  text-align:center;
+}
+.product button {
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 18px;
+  background: #356A9C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.product button:hover {
+  background: #244766;
+}
+
+
+footer {
+  background: #1F509A;
+  color: #ECE3D2;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+  nav a { font-size: 14px; margin: 0 10px; }
+  .mySlides .text { font-size: 18px; bottom: 20px; }
+}
+@media (max-width: 480px) {
+  header { flex-direction: column; gap: 10px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; }
+  .product h3 { font-size: 18px; }
+  .products { padding: 40px 20px; }
+  .product img { height: 180px; }
+  .mySlides .text { font-size: 16px; bottom: 15px; }
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.modal-content h2 {
+  font-size: 22px;
+  color: #356A9C;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #555;
+  margin: 8px 0;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 15px;
+  background: #356A9C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.modal-content button:hover {
+  background: #244766;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+.close:hover {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
