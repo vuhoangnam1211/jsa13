@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>btvn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 320px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    p {
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="formTitle">Đăng nhập</h2>
+
+    <div id="loginForm">
+      <input type="text" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+      <button onclick="login()">Đăng nhập</button>
+      <p>Chưa có tài khoản? <a href="#" onclick="toggleForm()">Đăng ký</a></p>
+    </div>
+
+    <div id="registerForm" class="hidden">
+      <input type="text" id="regName" placeholder="Tên người dùng" required>
+      <input type="text" id="regEmail" placeholder="Email" required>
+      <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+      <button onclick="register()">Đăng ký</button>
+      <p>Đã có tài khoản? <a href="#" onclick="toggleForm()">Đăng nhập</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      document.getElementById('loginForm').classList.toggle('hidden');
+      document.getElementById('registerForm').classList.toggle('hidden');
+      document.getElementById('formTitle').textContent =
+        document.getElementById('loginForm').classList.contains('hidden') ? 'Đăng ký' : 'Đăng nhập';
+    }
+
+    function register() {
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      if (!name || !email || !password) {
+        alert('Vui lòng điền đầy đủ thông tin');
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users') || '{}');
+      if (users[email]) {
+        alert('Email đã được đăng ký');
+        return;
+      }
+
+      users[email] = { name, password };
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Đăng ký thành công');
+      toggleForm();
+    }
+
+    function login() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      let users = JSON.parse(localStorage.getItem('users') || '{}');
+      if (!users[email] || users[email].password !== password) {
+        alert('email hoặc mật khẩu không đúng');
+        return;
+      }
+
+      alert(`hello ${users[email].name}!`);
+    }
+  </script>
+</body>
+</html>

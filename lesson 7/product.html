@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 10px;
+        background-color: #ffffff;
+        padding: 5px;
+      }
+      h2 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      span {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="product_list">
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+      <div class="box_item">
+        <img
+          src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg"
+          alt="iphone"
+          width="200"
+        />
+        <h2>Product name</h2>
+        <p>product Description</p>
+        <p>Product price</p>
+      </div>
+    </div>
+    <script>
+      fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
+        .then((res) => {
+          if (res.ok) return res.json();
+        })
+        .then((tasks) => {
+          console.log(tasks);
+
+          const list = document.querySelector("#product_list");
+
+          // Clear old dummy HTML
+          list.innerHTML = "";
+
+          // Insert API data
+          tasks.forEach((item) => {
+            list.innerHTML += `
+              <div class="box_item">
+                <img src="https://www.didongmy.com/vnt_upload/product/09_2025/iphone_17_pro_max_orange_thumb_didongmy.jpg" width="200">
+                <h2>${item.name}</h2>
+                <p>${item.des}</p>
+                <p>${item.price}</p>
+              </div>`;
+          });
+        })
+        .catch((err) => console.error("Error fetching:", err));
+    </script>
+  </body>
+</html>

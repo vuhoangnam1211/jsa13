@@ -1,0 +1,127 @@
+`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "menu content"
+        "footer footer";
+      grid-template-columns: auto auto auto auto;
+      gap: 10px;
+      background-color: #ffffff;
+      padding: 5px;
+    }
+
+    .container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .container > div.header {
+      max-width: 100%;
+      height: auto;
+    }
+    .container > div.menu {
+      max-width: 100%;
+      height: auto;
+    }
+    .container > div.content {
+      max-width: 100%;
+      height: auto;
+    }
+    .container > div.footer {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Công Nghệ</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s"
+          alt="image"
+        />
+        <h1>
+          Clip “tai nạn nguy hiểm từ tình huống đời thường” nổi bật tuần qua
+        </h1>
+      </div>
+      <div class="menu">
+        <h2>Lao Động - Việc Làm</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s"
+          alt="image"
+        />
+        <h1>Người dân xây “nhà lầu” cho heo, bò tránh lũ</h1>
+      </div>
+      <div class="content">
+        <h2>Pháp Luật</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s"
+          alt="image"
+        />
+        <h1>
+          Bắt kẻ cướp điện thoại của người khuyết tật bán vé số ở Tây Ninh
+        </h1>
+      </div>
+      <div class="footer">
+        <h2>Tình Yêu - Giới Tính</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s"
+          alt="image"
+        />
+        <h1>Bắt gặp chồng thân thiết với tôi, cô vợ có phản ứng gây bất ngờ</h1>
+      </div>
+    </div>
+    <script>
+      const data = [
+        {
+          name: "công nghệ",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s",
+        },
+
+        {
+          name: "Lao Động - Việc Làm",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s",
+        },
+
+        {
+          name: "Pháp Luật",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s",
+        },
+
+        {
+          name: "Tình Yêu - Giới Tính",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGVpCMv8LNu0N1RBHHOsh1o_X_VbLFMXASkg&s",
+        },
+      ];
+
+      if (!localStorage.getItem("data")) {
+        localStorage.setItem("data", JSON.stringify(data));
+      }
+
+      let dataLocal = JSON.parse(localStorage.getItem("data"));
+
+      console.log(dataLocal);
+
+      for (var i = 0; i < dataLocal.length; i++) {
+        console.log(dataLocal[i].title)
+        console.log(dataLocal[i].url)
+
+        eleContainer.innerHTML += `
+        <div class="container">
+          <img src = "${dataLocal[i].img}"alt = "" />
+          <h2>${dataLocal[i].name}</h2>
+          </div>
+        `;
+
+          
+      }
+    </script>
+  </body>
+</html>

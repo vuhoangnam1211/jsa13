@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <div class="register-container">
+    <div class="drop-icon">💧</div>
+    <h2>REGISTER</h2>
+
+    <form>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" placeholder="Enter your first name..." required>
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" placeholder="Enter your last name..." required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email..." required>
+
+      <label for="password">Password</label>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Enter your password..." required>
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <div class="password-container">
+        <input type="password" id="confirmPassword" class="confirm-pass" placeholder="Confirm your password..." required>
+      </div>
+
+      <a href="signin.html" class="haveaccount">Already have an account?</a>
+      <button type="submit" class="register-btn">CREATE ACCOUNT</button>
+    </form>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
