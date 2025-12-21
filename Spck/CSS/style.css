@@ -255,6 +255,49 @@ footer p {
 .close:hover {
   color: red;
 }
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  width: auto;
+  padding: 10px 14px;
+  font-family: Bahnschrift, sans-serif;
+  font-size: 14px;
+  border: 2px solid #356A9C;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box input:focus {
+  border-color: #1F509A;
+  box-shadow: 0 0 0 3px rgba(53,106,156,0.2);
+}
+
+.search-box button {
+  padding: 10px 18px;
+  font-family: Bahnschrift, sans-serif;
+  font-size: 14px;
+  background: #356A9C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #244766;
+}
+
 
 @keyframes fadeIn {
   from {opacity: 0; transform: scale(0.9);}
