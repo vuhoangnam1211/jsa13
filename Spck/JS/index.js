@@ -35,9 +35,9 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
   .then((res) => res.json())
   .then((products) => {
     const container = document.querySelector(".products");
-
     container.innerHTML = "";
 
+    // Group products by category
     const grouped = products.reduce((acc, item) => {
       if (!acc[item.category]) {
         acc[item.category] = [];
@@ -46,9 +46,9 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
       return acc;
     }, {});
 
+    // Render each category
     Object.keys(grouped).forEach((category) => {
       const section = document.createElement("section");
-      section.classList.add("products");
 
       section.innerHTML = `
         <h2>${category}</h2>
@@ -64,7 +64,9 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
             <h3>${item.name}</h3>
             <p>${item.price}</p>
             <p>${item.short_des}</p>
-            <button class="view-btn">View Details</button>
+            <button class="view-btn" data-id="${item.id}">
+              View Details
+            </button>
           </div>
         `;
       });
@@ -73,3 +75,48 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
     });
   })
   .catch((err) => console.error("Error fetching:", err));
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("view-btn")) {
+    const id = e.target.dataset.id;
+    window.location.href = `product.html?id=${id}`;
+  }
+});
+
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchProduct();
+  }
+}
+
+function searchProduct() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+
+  const products = document.querySelectorAll(".product");
+  let found = false;
+
+  products.forEach((product) => {
+    const title = product.querySelector("h3").innerText.toLowerCase();
+
+    product.classList.remove("highlight");
+
+    if (!found && title.includes(input) && input !== "") {
+      found = true;
+
+      product.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+
+      product.classList.add("highlight");
+
+      product.addEventListener("mouseenter", removeHighlightOnce);
+    }
+  });
+}
+
+function removeHighlightOnce(e) {
+  e.currentTarget.classList.remove("highlight");
+  e.currentTarget.removeEventListener("mouseenter", removeHighlightOnce);
+}
