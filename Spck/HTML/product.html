@@ -10,16 +10,39 @@
     <link rel="stylesheet" href="/Spck/CSS/product.css" />
   </head>
   <body>
-    <div class="container">
-      <button class="btn back" onclick="history.back()">← Back</button>
+    <header>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <img
+          src="https://images.vexels.com/media/users/3/143495/isolated/preview/6b80b9965b1ec4d47c31d7eccf8ce4b0-yellow-lightning-bolt-icon.png"
+          alt="TechSeek Logo"
+        />
+        <h1>TechSeek</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="signin.html">Sign Out</a>
+      </nav>
+    </header>
 
-      <img id="product-img" class="product-img" alt="" />
+    <!-- Centered product section -->
+    <div class="page">
+      <div class="container">
+        <button class="btn back" onclick="history.back()">← Back</button>
 
-      <h2 id="product-name"></h2>
-      <div class="price" id="product-price"></div>
-      <p class="description" id="product-desc"></p>
+        <img id="product-img" class="product-img" alt="" />
+
+        <h2 id="product-name"></h2>
+        <div class="price" id="product-price"></div>
+        <p class="description" id="product-desc"></p>
+        <button class="btn add-to-cart" id="add-to-cart">Add to Cart</button>
+      </div>
     </div>
 
     <script src="/Spck/JS/product.js"></script>
+
+    <footer>
+      <p>© 2025 TechSeek. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

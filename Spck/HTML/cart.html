@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart</title>
+
+  <link rel="stylesheet" href="/Spck/CSS/style.css" />
+  <link rel="stylesheet" href="/Spck/CSS/cart.css" />
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <img
+        src="https://images.vexels.com/media/users/3/143495/isolated/preview/6b80b9965b1ec4d47c31d7eccf8ce4b0-yellow-lightning-bolt-icon.png"
+        alt="TechSeek Logo"
+      />
+      <h1>TechSeek</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="signin.html">Sign Out</a>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-wrapper">
+
+      <section class="cart-left">
+        <h2>Your Cart</h2>
+        <p class="empty-text" id="empty-text">Your cart is empty.</p>
+        <div id="cart-items"></div>
+      </section>
+
+      <aside class="cart-right">
+        <div class="summary-row">
+          <span>Total:</span>
+          <strong id="cart-total"$0.00 VND/strong>
+        </div>
+        <button class="btn checkout">Checkout</button>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 TechSeek. All Rights Reserved.</p>
+  </footer>
+
+  <script src="/Spck/JS/cart.js"></script>
+</body>
+</html>

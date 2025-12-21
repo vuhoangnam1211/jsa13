@@ -37,7 +37,6 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
     const container = document.querySelector(".products");
     container.innerHTML = "";
 
-    // Group products by category
     const grouped = products.reduce((acc, item) => {
       if (!acc[item.category]) {
         acc[item.category] = [];
@@ -46,7 +45,6 @@ fetch("https://6922d0ba09df4a4923236110.mockapi.io/api/product")
       return acc;
     }, {});
 
-    // Render each category
     Object.keys(grouped).forEach((category) => {
       const section = document.createElement("section");
 

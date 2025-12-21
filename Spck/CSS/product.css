@@ -1,3 +1,42 @@
+header {
+  background: #1f509a;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+header img {
+  height: 45px;
+}
+header h1 {
+  margin: 0;
+  color: #ece3d2;
+  font-size: 22px;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ece3d2;
+  font-size: 16px;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #d8c7a8;
+}
+
+footer {
+  background: #1F509A;
+  color: #ECE3D2;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
 .container {
   width: 420px;
   padding: 35px;
@@ -46,3 +85,40 @@
 .btn.back:hover {
   background-color: #163f84;
 }
+
+.btn.add-to-cart {
+  width: 100%;
+  padding: 12px;
+  background-color: #1f509a;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-family: Bahnschrift, sans-serif;
+  color: #f3e9dc;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.15s;
+}
+
+.btn.add-to-cart:hover {
+  background-color: #163f84;
+  transform: translateY(-1px);
+}
+
+.btn.add-to-cart:active {
+  transform: translateY(0);
+}
+
+
+body {
+  display: block;
+  align-items: unset;
+  justify-content: unset;
+  height: auto;
+}
+.page {
+  min-height: calc(100vh - 80px); /* subtract header height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

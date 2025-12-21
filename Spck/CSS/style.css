@@ -5,34 +5,32 @@ body {
   color: #333;
 }
 
-
 header {
-  background: #1F509A;
+  background: #1f509a;
   padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 header img {
   height: 45px;
 }
 header h1 {
   margin: 0;
-  color: #ECE3D2;
+  color: #ece3d2;
   font-size: 22px;
 }
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #ECE3D2;
+  color: #ece3d2;
   font-size: 16px;
   transition: 0.3s;
 }
 nav a:hover {
   color: #d8c7a8;
 }
-
 
 .slideshow-container {
   position: relative;
@@ -50,10 +48,9 @@ nav a:hover {
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: contain;  
+  object-fit: contain;
   background: #000;
 }
-
 
 .mySlides .text {
   position: absolute;
@@ -68,7 +65,6 @@ nav a:hover {
   border-radius: 6px;
   text-align: center;
 }
-
 
 .dots-container {
   text-align: center;
@@ -86,26 +82,24 @@ nav a:hover {
 }
 .dot.active,
 .dot:hover {
-  background-color: #1F509A;
+  background-color: #1f509a;
 }
-
 
 .hero {
   text-align: center;
   padding: 40px 20px 20px;
-  color: #356A9C;
+  color: #356a9c;
 }
-
 
 .products {
   padding: 60px 40px;
-  text-align: center,;
+  text-align: center;
 }
 .products h2 {
   font-size: 32px;
   margin-bottom: 40px;
-  color: #356A9C;
-  text-align:center;
+  color: #356a9c;
+  text-align: center;
 }
 .product-grid {
   display: grid;
@@ -116,12 +110,12 @@ nav a:hover {
   background: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
 .product:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 .product img {
   width: 100%;
@@ -133,18 +127,18 @@ nav a:hover {
 .product h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  text-align:center;
+  text-align: center;
 }
 .product p {
   color: #666;
   margin-bottom: 15px;
-  text-align:center;
+  text-align: center;
 }
 .product button {
   width: 100%;
   font-size: 15px;
   padding: 10px 18px;
-  background: #356A9C;
+  background: #356a9c;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -155,10 +149,9 @@ nav a:hover {
   background: #244766;
 }
 
-
 footer {
-  background: #1F509A;
-  color: #ECE3D2;
+  background: #1f509a;
+  color: #ece3d2;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
@@ -168,21 +161,46 @@ footer p {
   font-size: 14px;
 }
 
-
 @media (max-width: 768px) {
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 18px; }
-  nav a { font-size: 14px; margin: 0 10px; }
-  .mySlides .text { font-size: 18px; bottom: 20px; }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+  nav a {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  .mySlides .text {
+    font-size: 18px;
+    bottom: 20px;
+  }
 }
 @media (max-width: 480px) {
-  header { flex-direction: column; gap: 10px; }
-  .hero h1 { font-size: 28px; }
-  .hero p { font-size: 16px; }
-  .product h3 { font-size: 18px; }
-  .products { padding: 40px 20px; }
-  .product img { height: 180px; }
-  .mySlides .text { font-size: 16px; bottom: 15px; }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .product h3 {
+    font-size: 18px;
+  }
+  .products {
+    padding: 40px 20px;
+  }
+  .product img {
+    height: 180px;
+  }
+  .mySlides .text {
+    font-size: 16px;
+    bottom: 15px;
+  }
 }
 
 .close {
@@ -206,7 +224,7 @@ footer p {
   padding: 10px 14px;
   font-family: Bahnschrift, sans-serif;
   font-size: 14px;
-  border: 2px solid #356A9C;
+  border: 2px solid #356a9c;
   border-radius: 8px;
   outline: none;
   background: #fff;
@@ -218,15 +236,15 @@ footer p {
 }
 
 .search-box input:focus {
-  border-color: #1F509A;
-  box-shadow: 0 0 0 3px rgba(53,106,156,0.2);
+  border-color: #1f509a;
+  box-shadow: 0 0 0 3px rgba(53, 106, 156, 0.2);
 }
 
 .search-box button {
   padding: 10px 18px;
   font-family: Bahnschrift, sans-serif;
   font-size: 14px;
-  background: #356A9C;
+  background: #356a9c;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -239,18 +257,24 @@ footer p {
 }
 
 .product.highlight {
-  outline: 3px solid #1F509A;
+  outline: 3px solid #1f509a;
   outline-offset: 4px;
   transition: outline 0.3s;
 }
 
 .product.highlight {
-  outline: 3px solid #1F509A;
+  outline: 3px solid #1f509a;
   outline-offset: 4px;
 }
 
 
 @keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
