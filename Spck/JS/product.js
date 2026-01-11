@@ -44,11 +44,11 @@ document.getElementById("add-to-cart").addEventListener("click", () => {
 
   const btn = document.getElementById("add-to-cart");
   const originalText = btn.textContent;
-  btn.textContent = "✓ Added to Cart!";
+  btn.textContent = "Added to Cart!";
   btn.style.backgroundColor = "#28a745";
 
   setTimeout(() => {
     btn.textContent = originalText;
     btn.style.backgroundColor = "";
-  }, 1000);
+  }, 1500);
 });
