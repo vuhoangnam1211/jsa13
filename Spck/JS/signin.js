@@ -21,6 +21,8 @@ function login(event) {
   });
 
   if (user) {
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", user.username || user.email);
     alert("Welcome back");
     window.location.href = "index.html";
   } else {
